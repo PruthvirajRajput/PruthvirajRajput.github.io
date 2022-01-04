@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+  
+  <head> <meta charset="UTF-8">
+    
+    <title> JSON Robot </title>
+    
+    <link href="media/css/homepage.css" type="text/css" rel="stylesheet">
+  </head>
+  
+  <body class="std_body body">
+    
+    <header class="std_header header"><h1> JSON Robot </header>
+    
+      <main class="main">
+        
+        
+        
+<article>
+
+    <h1>Javascript Robot Through using JSON</h1> <br>
+
+<section class="user">
+
+    <div class="userbox">
+
+
+    </div>
+
+<div class="robot">
+
+    <input type="text" class="userinput" onfocus="clr()"> <button type="button" class="send" onclick="send()">Send</button>
+
+</div>
+
+</section>
+
+
+</article>
+
+
+        
+        
+      </main>
+
+<script type="text/javsacript">
+
+function send() {
+let udata = '{"data":["hi","h","hello","how are you","good morning","who are you","what is your city","where do you live","what is your name","javascript","php","google.com","json","what is my name","what is my name ?", "what is my name?","fun","usa","america","capital of usa","capital of america","capital of india","capital city of india","good afternoon","afternoon","noon","capital city of america","are you ok","i am fine","good evening","good night","evening","yes","night","oye","hallo","hlo","hullo"] }';
+
+let rdata = '{"data":["hi","you mean hi ? "," hello i am robot","i am fine","good morning friend","i am a robot","i am living in computer process","i am living in computer process","i have no name because i am a javascript program","javascript is a scripting language","php is scripting language","<a href=www.google.com>google.com</a>","i am a program using json data to answer you","i do not know your name","i do not know your name","i do not know your name","do you want to fun ? ","usa is a country located at north america contient","america is a country located at north america contienent","capital of united states of america is washington dc","capital of america is washington dc","capital of india is new delhi","capital city of india is new delhi","good afternoon friend","good afternoon, not only afternoon, remember it again. ok","good afternoon, do not write just noon","capital city of america is washington dc","i am ok, tell me about you, how are you","that is good that you are fine thanks friend","good evening friend, are you going to enjoy this evening ?","good night, are you going to sleep ? ","is this evening ? ok well... good evening","well done, keep it up","good night","what do you want to say","hello","hello","hello"]  }';
+
+let ju = JSON.parse(udata);
+
+let ru = JSON.parse(rdata);
+
+let userbox = document.querySelector(".userbox");
+
+let ui = document.querySelector(".userinput");
+
+let ud = ui.value;
+
+for(x in ju["data"])
+{
+
+
+if(ud == ju["data"][x])
+{
+
+userbox.innerHTML += "<p class='user_reply'>you : "+  ju["data"][x]  +"</p><p class='robot_reply'>Robot : " + ru["data"][x] + "</p>";
+
+}
+
+let xx = document.querySelector(".userbox");
+
+let yy = xx.firstElementChild;
+
+if(xx.childElementCount > 6)
+{
+
+yy.parentElement.removeChild(yy);
+
+}
+
+
+}
+
+
+} // end of function
+
+</script>
